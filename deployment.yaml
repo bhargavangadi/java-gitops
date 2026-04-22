@@ -11,12 +11,15 @@ spec:
   template:
     metadata:
       labels:
-        app: java-app 
+        app: java-app
     spec:
       containers:
-        - name: java-app 
+        - name: java-app
           image: bhargavangadi18/java-app:latest
           imagePullPolicy: IfNotPresent
           ports:
-          - containerPort: 8080
-
+            - containerPort: 8080
+          resources:
+            requests:
+              cpu: "10m"       # 0.01 CPU
+              memory: "50Mi"   # 50 MiB RAM
